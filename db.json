@@ -1,0 +1,32 @@
+{
+  "products": [
+    {
+      "name": "Dell",
+      "description": "One of the Best Cable",
+      "status": "in Stock",
+      "price": "320",
+      "id": "9d39"
+    },
+    {
+      "id": "fe91",
+      "name": "Headphones",
+      "description": "New Branded Headphones",
+      "status": "in Stock",
+      "price": "3000"
+    },
+    {
+      "name": "Dell Laptops",
+      "description": "One of the Best Laptop",
+      "status": "in Stock",
+      "price": "95000",
+      "id": "0841"
+    },
+    {
+      "id": "248f",
+      "name": "Logitech Keyboard",
+      "description": "Tested and certified 100%",
+      "status": "Out of Stock",
+      "price": "4500"
+    }
+  ]
+}
