@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { RiDashboardLine } from "react-icons/ri";
 import { GoProjectSymlink } from "react-icons/go";
 import { GrTransaction } from "react-icons/gr";
@@ -14,6 +14,11 @@ import { ThemeContext } from "../../Context/ThemeContext";
 function SideBar() {
 
   const {isDarkMode} = useContext(ThemeContext);
+  const navigate = useNavigate();
+  const handleLogout = () =>{
+    localStorage.removeItem("Admin");
+    navigate("/login");
+  }
   return (
     <>
       <div className={` ${isDarkMode ? "dark text-white": ""} shadow-md p-8`}>
@@ -31,7 +36,7 @@ function SideBar() {
         <div className=" mt-10">
           <ul className=" flex flex-col gap-3">
             <NavLink
-              to=""
+              to="Home"
               className={({ isActive }) =>
                 ` flex items-center gap-3 text-[13px] py-2 px-3 rounded-md ${
                   isActive ? " bg-color text-white" : ""
@@ -184,7 +189,8 @@ function SideBar() {
               )}
             </NavLink>
             <NavLink
-              to="/report"
+              to=""
+              onClick={handleLogout}
               className={({ isActive }) =>
                 ` flex items-center gap-3 text-[13px] py-2 px-3 mt-20 rounded-md hover:blue-color ${
                   isActive ? " bg-color text-white" : ""
