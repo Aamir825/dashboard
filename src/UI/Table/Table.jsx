@@ -37,7 +37,7 @@ function Table() {
           </tr>
         </thead>
         <tbody>
-          {productData?.map(({ id, name, description, status, price }) => {
+          {productData?.slice(0,8).map(({ id, name, description, status, price }) => {
             return (
               <tr key={id} className= {`${isDarkMode ? " border-gray-800": ""} border-y-2 border-gray-100`}>
                 <td className=" text-[12px]">{name}</td>

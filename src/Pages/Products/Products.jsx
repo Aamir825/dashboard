@@ -5,15 +5,21 @@ import { MdOutlineDeleteSweep } from "react-icons/md";
 import useGetProducts from "../../Hooks/useGetProducts";
 import Button from "../../UI/Button/Button";
 import useDeleteProduct from "../../Hooks/useDeleteProduct";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { ThemeContext } from "../../Context/ThemeContext";
 
 function Products() {
   const {isDarkMode} = useContext(ThemeContext);
   const productData = useGetProducts();
+  const [pages, setPages] = useState(1);
   const {deleteProduct} = useDeleteProduct();
   const handleDelete = (id) =>{
     deleteProduct(id);
+  }
+  const selectPageHandler = (selectedpage) =>{
+    if(selectedpage >=1 && selectedpage<= productData.length/4 && selectedpage !== pages)
+    setPages(selectedpage);
+    console.log("working")
   }
 
   return (
@@ -54,7 +60,7 @@ function Products() {
             </tr>
           </thead>
           <tbody>
-            {productData?.map(({ name, description, status, price, id }) => {
+            {productData?.slice(pages * 4 - 4, pages * 4).map(({ name, description, status, price, id }) => {
               return (
                 <tr key={id} className={`${isDarkMode ? " border-gray-800": ""} border-y-2 border-gray-100`}>
                   <td className=" text-[12px]">{name}</td>
@@ -88,6 +94,13 @@ function Products() {
           </tbody>
         </table>
       </div>
+      {productData?.length>0 && (<div className=" px-8">
+          <span onClick={()=> selectPageHandler(pages - 1)} className= {`${pages > 1 ? "" : "cursor-not-allowed"} ${isDarkMode ? " border-gray-800 text-white": ""} p-2 border-2 border-gray-200 mr-1 cursor-pointer hover:bg-blue-600 hover:text-white`}>Prev</span>
+          {[...Array(productData.length / 4)].map((_,index)=>{
+            return <span onClick={() => selectPageHandler(index + 1)} className= {` ${pages === index + 1 ? " bg-blue-600 text-white":""} ${isDarkMode ? " border-gray-800 text-white": ""} p-2 border-2 border-gray-200 mr-1 cursor-pointer hover:bg-blue-600 hover:text-white`} key={index}>{index + 1}</span>
+          })}
+          <span onClick={()=> selectPageHandler(pages + 1)} className= {` ${pages < productData.length/4 ? "":" cursor-not-allowed"} ${isDarkMode ? " border-gray-800 text-white": ""} p-2 border-2 border-gray-200 mr-1 cursor-pointer hover:bg-blue-600 hover:text-white`}>Next</span>
+        </div>)}
     </>
   );
 }

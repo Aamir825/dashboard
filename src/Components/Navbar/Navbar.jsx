@@ -4,9 +4,12 @@ import { TbSun } from "react-icons/tb";
 import { IoMoonOutline } from "react-icons/io5";
 import { BsChatSquareDots } from "react-icons/bs";
 import { ThemeContext } from '../../Context/ThemeContext';
+import Breadcrumbs from '../Breadcrumbs/Breadcrumbs';
 
 function Navbar() {
   const {isDarkMode, ThemeMode} = useContext(ThemeContext);
+  let userDetails = JSON.parse(localStorage.getItem("users")) ?? [];
+  const loggedInUser = userDetails[0];
   return (
     <>
       <div className=' flex justify-between items-center px-12 pt-8'>
@@ -30,9 +33,12 @@ function Navbar() {
             <div>
               <img src='/images/image-avatar.png' alt='' className=' w-10'/>
             </div>
-            <h1 className={`text-[12px] font-[500]`}>Muhammad</h1>
+            <h1 className={`${isDarkMode ? "text-white": ""} text-[12px] font-[500]`}>{loggedInUser?.name}</h1>
           </div>
         </div>
+      </div>
+      <div className=' px-12 pt-2'>
+      <Breadcrumbs/>
       </div>
     </>
   )

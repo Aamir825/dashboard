@@ -4,12 +4,15 @@ import { useNavigate } from 'react-router-dom';
 const ProtectedRout = ({children}) => {
 
   const navigate = useNavigate();
-  const isAuthenticated = localStorage.getItem("Admin") === 'true';
-//   useEffect(()=>{
-//   if(!isAuthenticated){
-//     return navigate("/login");
-//   }
-//   },[isAuthenticated])
+  
+  useEffect(()=>{
+    let userDetails = JSON.parse(localStorage.getItem("users")) ?? [];
+    const loggedInUser = userDetails.find(user => user.email);
+    if (!loggedInUser) {
+      navigate("/signup");
+    }
+  })
+  
   return children;
 }
 

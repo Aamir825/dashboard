@@ -10,11 +10,17 @@ import ThemeContextProvider from './Context/ThemeContextProvider'
 import ErrorPage from './Pages/ErrorPage/ErrorPage'
 import Login from './Pages/Admin/Login/Login'
 import ProtectedRout from './Components/ProtectedRout/ProtectedRout'
+import Signup from './Pages/Admin/Signup/Signup'
+import { ToastContainer} from 'react-toastify';
 // import './App.css'
 
 function App() {
 
   const router = createBrowserRouter([
+    {
+      path: "signup",
+      element: <Signup/>
+    },
     {
       path: "login",
       element: <Login/>
@@ -52,6 +58,7 @@ function App() {
     <>
       <ThemeContextProvider>
       <RouterProvider router={router}/>
+      <ToastContainer/>
       </ThemeContextProvider>
     </>
   )

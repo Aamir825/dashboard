@@ -15,8 +15,10 @@ function SideBar() {
 
   const {isDarkMode} = useContext(ThemeContext);
   const navigate = useNavigate();
+  let userDetails = JSON.parse(localStorage.getItem("users")) ?? [];
+  const loggedInUser = userDetails[0];
   const handleLogout = () =>{
-    localStorage.removeItem("Admin");
+    localStorage.removeItem("users");
     navigate("/login");
   }
   return (
@@ -28,15 +30,15 @@ function SideBar() {
             <img src="./images/image-avatar.png" alt="" className=" w-12" />
           </div>
           <div>
-            <h1 className="font-[500]">Muhammad</h1>
-            <p className=" text-[11px] text-[#969696] -mt-1">CEO, MS</p>
+            <h1 className="font-[500]">{loggedInUser?.name}</h1>
+            <p className=" text-[11px] text-[#969696] -mt-1">{loggedInUser?.email}</p>
           </div>
         </div>
         {/* Sidebar Menus */}
         <div className=" mt-10">
           <ul className=" flex flex-col gap-3">
             <NavLink
-              to="Home"
+              to="/"
               className={({ isActive }) =>
                 ` flex items-center gap-3 text-[13px] py-2 px-3 rounded-md ${
                   isActive ? " bg-color text-white" : ""
@@ -189,12 +191,9 @@ function SideBar() {
               )}
             </NavLink>
             <NavLink
-              to=""
               onClick={handleLogout}
-              className={({ isActive }) =>
-                ` flex items-center gap-3 text-[13px] py-2 px-3 mt-20 rounded-md hover:blue-color ${
-                  isActive ? " bg-color text-white" : ""
-                }`
+              className={
+                ` flex items-center gap-3 text-[13px] py-2 px-3 mt-20 rounded-md hover:blue-color`
               }
             >
               {(isActive) => (

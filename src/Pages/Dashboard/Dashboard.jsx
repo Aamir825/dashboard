@@ -5,6 +5,7 @@ import { LuFolderCheck } from "react-icons/lu";
 import RightCards from "../../UI/RightCards/RightCards";
 import Table from "../../UI/Table/Table";
 import {ThemeContext} from "../../Context/ThemeContext"
+import Breadcrumbs from "../../Components/Breadcrumbs/Breadcrumbs";
 
 
 function Dashboard() {

@@ -27,6 +27,62 @@
       "description": "Tested and certified 100%",
       "status": "Out of Stock",
       "price": "4500"
+    },
+    {
+      "name": "Dell Inspiron",
+      "description": "One of the Best Cable",
+      "status": "in Stock",
+      "price": "600",
+      "id": "789j"
+    },
+    {
+      "id": "523y",
+      "name": "Headphones",
+      "description": "New Branded Headphones",
+      "status": "in Stock",
+      "price": "3000"
+    },
+    {
+      "name": "Dell Laptops",
+      "description": "One of the Best Laptop",
+      "status": "in Stock",
+      "price": "95700",
+      "id": "0975"
+    },
+    {
+      "id": "678e",
+      "name": "VGA Cable",
+      "description": "Tested and certified 100%",
+      "status": "Out of Stock",
+      "price": "940"
+    },
+    {
+      "name": "Lenovo",
+      "description": "One of the Best Cable",
+      "status": "in Stock",
+      "price": "320",
+      "id": "1e45"
+    },
+    {
+      "id": "56yu",
+      "name": "Headphones",
+      "description": "New Branded Headphones",
+      "status": "in Stock",
+      "price": "3780"
+    },
+    {
+      "name": "RGB Lights",
+      "description": "One of the Best Laptop",
+      "status": "in Stock",
+      "price": "95000",
+      "id": "0601"
+    },
+    {
+      "id": "7i98",
+      "name": "Logitech Keyboard",
+      "description": "Tested and certified 100%",
+      "status": "Out of Stock",
+      "price": "2300"
     }
   ]
 }

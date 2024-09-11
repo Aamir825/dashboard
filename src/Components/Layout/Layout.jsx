@@ -3,7 +3,6 @@ import Navbar from '../Navbar/Navbar'
 import Footer from '../Footer/Footer'
 import Sidebar from '../Sidebar/Sidebar'
 import { Outlet, useNavigation } from 'react-router-dom'
-import { ToastContainer} from 'react-toastify';
 import { ThemeContext } from '../../Context/ThemeContext'
 import Loader from '../Loader/Loader'
 
@@ -26,7 +25,6 @@ function Layout() {
           <Footer />
         </div>
       </div>
-      <ToastContainer/>
     </>
   );
 }
