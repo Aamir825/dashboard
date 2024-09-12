@@ -24,7 +24,7 @@ function Products() {
 
   return (
     <>
-      <div className={`${isDarkMode ? "dark text-white": ""} p-5 m-5 bg-white rounded-xl`}>
+      <div className={`${isDarkMode ? "dark text-white": ""} p-5 mx-5 my-2 bg-white rounded-xl`}>
         <div className=" flex justify-between items-center mb-7">
           <div>
             <h1 className=" text-xl font-[500]">Products</h1>
@@ -60,7 +60,7 @@ function Products() {
             </tr>
           </thead>
           <tbody>
-            {productData?.slice(pages * 4 - 4, pages * 4).map(({ name, description, status, price, id }) => {
+            {productData?.map(({ name, description, status, price, id }) => {
               return (
                 <tr key={id} className={`${isDarkMode ? " border-gray-800": ""} border-y-2 border-gray-100`}>
                   <td className=" text-[12px]">{name}</td>
@@ -94,13 +94,13 @@ function Products() {
           </tbody>
         </table>
       </div>
-      {productData?.length>0 && (<div className=" px-8">
+      {/* {productData?.length>0 && (<div className=" px-8 mt-5">
           <span onClick={()=> selectPageHandler(pages - 1)} className= {`${pages > 1 ? "" : "cursor-not-allowed"} ${isDarkMode ? " border-gray-800 text-white": ""} p-2 border-2 border-gray-200 mr-1 cursor-pointer hover:bg-blue-600 hover:text-white`}>Prev</span>
           {[...Array(productData.length / 4)].map((_,index)=>{
             return <span onClick={() => selectPageHandler(index + 1)} className= {` ${pages === index + 1 ? " bg-blue-600 text-white":""} ${isDarkMode ? " border-gray-800 text-white": ""} p-2 border-2 border-gray-200 mr-1 cursor-pointer hover:bg-blue-600 hover:text-white`} key={index}>{index + 1}</span>
           })}
           <span onClick={()=> selectPageHandler(pages + 1)} className= {` ${pages < productData.length/4 ? "":" cursor-not-allowed"} ${isDarkMode ? " border-gray-800 text-white": ""} p-2 border-2 border-gray-200 mr-1 cursor-pointer hover:bg-blue-600 hover:text-white`}>Next</span>
-        </div>)}
+        </div>)} slice(pages * 4 - 4, pages * 4).*/}
     </>
   );
 }

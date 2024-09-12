@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useLoaderData } from 'react-router-dom';
 import { toast } from "react-toastify";
+import { UpdateProduct } from '../Services/GetService';
 
 function useUpdateProduct() {
 
@@ -16,21 +17,13 @@ function useUpdateProduct() {
   });
 
   const updateProduct = async() =>{
-    const response = await fetch(`http://localhost:5000/products/${prodData.id}`,{
-        method: "PUT",
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(uproduct),
-    });
-
-    if(response.ok){
+       const response = await UpdateProduct(prodData.id,uproduct);
+       if(response){
         toast.success("Data Updated Successfully!");
         navigate("/products");
-    }else{
-      toast.error("Something Error!");
-    }
-
+       }else{
+           toast.error("Something Error!");
+        }
   }
   return {uproduct, setUproduct, updateProduct}
 }
