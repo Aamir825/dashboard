@@ -1,12 +1,9 @@
 import React,{useContext} from "react";
 import Chart from "../../Components/Chart/Chart";
 import TopCard from "../../UI/TopCard/TopCard";
-import { LuFolderCheck } from "react-icons/lu";
 import RightCards from "../../UI/RightCards/RightCards";
 import Table from "../../UI/Table/Table";
 import {ThemeContext} from "../../Context/ThemeContext"
-import Breadcrumbs from "../../Components/Breadcrumbs/Breadcrumbs";
-
 
 function Dashboard() {
 
@@ -17,7 +14,7 @@ function Dashboard() {
         <TopCard
           bgcolor=" bg-color"
           text=" text-white"
-          title="Total Projects"
+          title="Total Projects" 
           value="10,724"
           desc="All running and completed projects"
         />

@@ -1,3 +1,4 @@
+import { lazy } from 'react'
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 import Layout from './Components/Layout/Layout'
 import Dashboard from './Pages/Dashboard/Dashboard'

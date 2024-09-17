@@ -1,12 +1,10 @@
 import React, { useContext } from "react";
-import {ThemeContext} from '../../Context/ThemeContext';
 import { HiOutlineFolderOpen } from "react-icons/hi2";
 import { LuFolderCheck } from "react-icons/lu";
 import { LuFolderSync } from "react-icons/lu";
 
 function TopCard({ title, value, desc, bgcolor, text }) {
 
-  const {isDarkMode} = useContext(ThemeContext)
   return (
     <>
       <div className={`flex gap-2 ${bgcolor} p-5 rounded-xl h-32`}>
@@ -26,4 +24,4 @@ function TopCard({ title, value, desc, bgcolor, text }) {
   );
 }
 
-export default TopCard;
+export default React.memo(TopCard);

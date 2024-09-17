@@ -28,9 +28,9 @@ function RightCards() {
                 </p>
               </div>
               <div className="flex items-center">
-                <img src="/images/image-avatar.png" className=" w-6" />
-                <img src="/images/image-avatar.png" className=" w-6 -mx-2" />
-                <img src="/images/image-avatar.png" className=" w-6" />
+                <img src="/images/image-avatar.png" alt='' className=" w-6" />
+                <img src="/images/image-avatar.png" alt='' className=" w-6 -mx-2" />
+                <img src="/images/image-avatar.png" alt='' className=" w-6" />
               </div>
             </div>
           </div>

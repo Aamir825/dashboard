@@ -12,6 +12,7 @@ function Table() {
           <h1 className=" text-xl font-[500]">Products</h1>
         </div>
         <div>
+          <label aria-label=""></label>
           <select className= {`${isDarkMode ? "dark text-white border-gray-800": ""} outline-none border-2 border-gray-200 p-1 text-[13px] rounded-lg`}>
             <option>All Data</option>
             <option>Pending</option>

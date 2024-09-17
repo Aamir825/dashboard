@@ -23,8 +23,8 @@ function Navbar() {
             <input type='text' placeholder='Search' className= {`${isDarkMode ? "dark text-white": ""} relative px-7 py-2 bg-[#ededed] rounded-full outline-none`}/>
           </div>
           <div className={`${isDarkMode ? "dark text-white": ""} flex gap-4 bg-[#ededed] py-1 px-1 rounded-full`}>
-             <button className={` ${!isDarkMode? "bg-white" : " bg-transparent"} transition-all rounded-full p-2`} onClick={ThemeMode}><TbSun className= {`text-yellow-500 $`} size={18}/></button>
-             <button className={` ${isDarkMode ? " bg-white": " bg-transparent"} transition-all rounded-full p-2`} onClick={ThemeMode}><IoMoonOutline className= {`${isDarkMode ? "text-yellow-700": ""} text-gray-400`} size={18}/></button>
+             <button aria-label='' className={` ${!isDarkMode? "bg-white" : " bg-transparent"} transition-all rounded-full p-2`} onClick={ThemeMode}><TbSun className= {`text-yellow-500 $`} size={18}/></button>
+             <button aria-label='' className={` ${isDarkMode ? " bg-white": " bg-transparent"} transition-all rounded-full p-2`} onClick={ThemeMode}><IoMoonOutline className= {`${isDarkMode ? "text-yellow-700": ""} text-gray-400`} size={18}/></button>
           </div>
           <div className={`${isDarkMode ? "dark text-white": ""} bg-[#ededed] py-3 px-4 rounded-full`}>
             <BsChatSquareDots/>

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { Suspense, useContext } from 'react'
 import Navbar from '../Navbar/Navbar'
 import Footer from '../Footer/Footer'
 import Sidebar from '../Sidebar/Sidebar'
@@ -17,7 +17,11 @@ function Layout() {
     <>
       <div className=" flex h-screen">
         <Sidebar />
-        <div className= {`${isDarkMode ? " bg-black" : ""} flex-1 flex flex-col bg-[#EFF3F4]`}>
+        <div
+          className={`${
+            isDarkMode ? " bg-black" : ""
+          } flex-1 flex flex-col bg-[#EFF3F4]`}
+        >
           <Navbar />
           <main className=" flex-1 p-4 overflow-y-auto">
             <Outlet />
